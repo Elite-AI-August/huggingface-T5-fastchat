@@ -1,17 +1,7 @@
-# FastChat
-| [**Demo**](https://chat.lmsys.org/) | [**Arena**](https://arena.lmsys.org) | [**Discord**](https://discord.gg/HSWAKCrnFx) | [**Twitter**](https://twitter.com/lmsysorg) |
 
 FastChat is an open platform for training, serving, and evaluating large language model based chatbots. The core features include:
 - The weights, training code, and evaluation code for state-of-the-art models (e.g., Vicuna, FastChat-T5).
 - A distributed multi-model serving system with web UI and OpenAI-compatible RESTful APIs.
-
-## News
-- [2023/06] 🔥 We introduced **LongChat**, our long-context chatbots and evaluation tools. Check out the blog [post](https://lmsys.org/blog/2023-06-29-longchat/) and [code](https://github.com/DachengLi1/LongChat/).
-- [2023/05] We introduced **Chatbot Arena** for battles among LLMs. Check out the blog [post](https://lmsys.org/blog/2023-05-03-arena) and [demo](https://arena.lmsys.org).
-- [2023/04] We released **FastChat-T5** compatible with commercial usage. Check out the [weights](#fastchat-t5) and [demo](https://chat.lmsys.org).
-- [2023/03] We released **Vicuna: An Open-Source Chatbot Impressing GPT-4 with 90% ChatGPT Quality**. Check out the blog [post](https://vicuna.lmsys.org) and [demo](https://chat.lmsys.org).
-
-<a href="https://chat.lmsys.org"><img src="assets/demo_narrow.gif" width="70%"></a>
 
 ## Contents
 - [Install](#install)
@@ -25,17 +15,11 @@ FastChat is an open platform for training, serving, and evaluating large languag
 
 ## Install
 
-### Method 1: With pip
-
-```bash
-pip3 install fschat
-```
-
-### Method 2: From source
+### From source
 
 1. Clone this repository and navigate to the FastChat folder
 ```bash
-git clone https://github.com/lm-sys/FastChat.git
+git clone https://github.com/Elite-AI-August/FastChat.git
 cd FastChat
 ```
 
@@ -52,17 +36,15 @@ pip3 install -e .
 
 ## Model Weights
 ### Vicuna Weights
-We release [Vicuna](https://lmsys.org/blog/2023-03-30-vicuna/) weights v1.3 as merged weights directly. You do not need to apply delta.
-Vicuna is based on LLaMA and should be used under LLaMA's [model license](https://github.com/facebookresearch/llama/blob/main/MODEL_CARD.md).
 
 You can use the commands below to start chatting. It will automatically download the weights from Hugging Face repos.
 See more command options and how to handle out-of-memory in the "Inference with Command Line Interface" section below.
 
 | Size | Chat Command | Hugging Face Repo |
 | ---  | --- | --- |
-| 7B   | `python3 -m fastchat.serve.cli --model-path lmsys/vicuna-7b-v1.3`  | [lmsys/vicuna-7b-v1.3](https://huggingface.co/lmsys/vicuna-7b-v1.3)   |
-| 13B  | `python3 -m fastchat.serve.cli --model-path lmsys/vicuna-13b-v1.3` | [lmsys/vicuna-13b-v1.3](https://huggingface.co/lmsys/vicuna-13b-v1.3) |
-| 33B  | `python3 -m fastchat.serve.cli --model-path lmsys/vicuna-33b-v1.3` | [lmsys/vicuna-33b-v1.3](https://huggingface.co/lmsys/vicuna-33b-v1.3) |
+| 7B   | `python3 -m fastchat.serve.cli --model-path Elite-AI-August/model_name`  | [Elite-AI-August/model_name](https://huggingface.co/Elite-AI-August/model_name)   |
+| 13B  | `python3 -m fastchat.serve.cli --model-path Elite-AI-August/vicuna-13b-v1.3` | [Elite-AI-August/vicuna-13b-v1.3](https://huggingface.co/Elite-AI-August/vicuna-13b-v1.3) |
+| 33B  | `python3 -m fastchat.serve.cli --model-path Elite-AI-August/vicuna-33b-v1.3` | [Elite-AI-August/vicuna-33b-v1.3](https://huggingface.co/Elite-AI-August/vicuna-33b-v1.3) |
 
 **Old weights**: see [docs/vicuna_weights_version.md](docs/vicuna_weights_version.md) for all versions of weights and their differences.
 
@@ -71,19 +53,17 @@ We release LongChat models under LLaMA's [model license](https://github.com/face
 
 | Size | Chat Command | Hugging Face Repo |
 | ---  | --- | --- |
-| 7B   | `python3 -m fastchat.serve.cli --model-path lmsys/longchat-7b-16k`  | [lmsys/longchat-7b-16k](https://huggingface.co/lmsys/longchat-7b-16k)   |
-| 13B  | `python3 -m fastchat.serve.cli --model-path lmsys/longchat-13b-16k` | [lmsys/longchat-13b-16k](https://huggingface.co/lmsys/longchat-13b-16k) |
+| 7B   | `python3 -m fastchat.serve.cli --model-path Elite-AI-August/longchat-7b-16k`  | [Elite-AI-August/longchat-7b-16k](https://huggingface.co/Elite-AI-August/longchat-7b-16k)   |
+| 13B  | `python3 -m fastchat.serve.cli --model-path Elite-AI-August/longchat-13b-16k` | [Elite-AI-August/longchat-13b-16k](https://huggingface.co/Elite-AI-August/longchat-13b-16k) |
 
 ### FastChat-T5
 You can use the commands below to chat with FastChat-T5. It will automatically download the weights from Hugging Face repos.
 
 | Size | Chat Command | Hugging Face Repo |
 | ---  | --- | --- |
-| 3B   | `python3 -m fastchat.serve.cli --model-path lmsys/fastchat-t5-3b-v1.0`  | [lmsys/fastchat-t5-3b-v1.0](https://huggingface.co/lmsys/fastchat-t5-3b-v1.0) |
+| 3B   | `python3 -m fastchat.serve.cli --model-path Elite-AI-August/fastchat-t5-3b-v1.0`  | [Elite-AI-August/fastchat-t5-3b-v1.0](https://huggingface.co/Elite-AI-August/fastchat-t5-3b-v1.0) |
 
 ## Inference with Command Line Interface
-
-<a href="https://chat.lmsys.org"><img src="assets/screenshot_cli.png" width="70%"></a>
 
 (Experimental Feature: You can specify `--style rich` to enable rich text output and better text streaming quality for some non-ASCII content. This may not work properly on certain terminals.)
 
@@ -93,31 +73,23 @@ Vicuna, Alpaca, Baize, ChatGLM, Dolly, Falcon, FastChat-T5, GPT4ALL, Guanaco, MT
 
 See a complete list of supported models and instructions to add a new model [here](docs/model_support.md).
 
-#### Single GPU
-The command below requires around 14GB of GPU memory for Vicuna-7B and 28GB of GPU memory for Vicuna-13B.
-See the "No Enough Memory" section below if you do not have enough memory.
-`--model-path` can be a local folder or a Hugging Face repo name.
-```
-python3 -m fastchat.serve.cli --model-path lmsys/vicuna-7b-v1.3
-```
-
 #### Multiple GPUs
 You can use model parallelism to aggregate GPU memory from multiple GPUs on the same machine.
 ```
-python3 -m fastchat.serve.cli --model-path lmsys/vicuna-7b-v1.3 --num-gpus 2
+python3 -m fastchat.serve.cli --model-path Elite-AI-August/model_name --num-gpus 2
 ```
 
 #### CPU Only
 This runs on the CPU only and does not require GPU. It requires around 30GB of CPU memory for Vicuna-7B and around 60GB of CPU memory for Vicuna-13B.
 ```
-python3 -m fastchat.serve.cli --model-path lmsys/vicuna-7b-v1.3 --device cpu
+python3 -m fastchat.serve.cli --model-path Elite-AI-August/model_name --device cpu
 ```
 
 #### Metal Backend (Mac Computers with Apple Silicon or AMD GPUs)
 Use `--device mps` to enable GPU acceleration on Mac computers (requires torch >= 2.0).
 Use `--load-8bit` to turn on 8-bit compression.
 ```
-python3 -m fastchat.serve.cli --model-path lmsys/vicuna-7b-v1.3 --device mps --load-8bit
+python3 -m fastchat.serve.cli --model-path Elite-AI-August/model_name --device mps --load-8bit
 ```
 Vicuna-7B can run on a 32GB M1 Macbook with 1 - 2 words / second.
 
@@ -129,7 +101,7 @@ source /opt/intel/oneapi/setvars.sh
 
 Use `--device xpu` to enable XPU/GPU acceleration.
 ```
-python3 -m fastchat.serve.cli --model-path lmsys/vicuna-7b-v1.3 --device xpu
+python3 -m fastchat.serve.cli --model-path Elite-AI-August/model_name --device xpu
 ```
 Vicuna-7B can run on an Intel Arc A770 16GB.
 
@@ -139,7 +111,7 @@ This can reduce memory usage by around half with slightly degraded model quality
 It is compatible with the CPU, GPU, and Metal backend.
 Vicuna-13B with 8-bit compression can run on a single NVIDIA 3090/4080/T4/V100(16GB) GPU.
 ```
-python3 -m fastchat.serve.cli --model-path lmsys/vicuna-7b-v1.3 --load-8bit
+python3 -m fastchat.serve.cli --model-path Elite-AI-August/model_name --load-8bit
 ```
 
 In addition to that, you can add `--cpu-offloading` to commands above to offload weights that don't fit on your GPU onto the CPU memory. This requires 8-bit compression to be enabled and the bitsandbytes package to be installed, which is only available on linux operating systems.
@@ -149,8 +121,6 @@ In addition to that, you can add `--cpu-offloading` to commands above to offload
 - [MLC LLM](https://mlc.ai/mlc-llm/), backed by [TVM Unity](https://github.com/apache/tvm/tree/unity) compiler, deploys Vicuna natively on phones, consumer-class GPUs and web browsers via Vulkan, Metal, CUDA and WebGPU.
 
 ## Serving with Web GUI
-
-<a href="https://chat.lmsys.org"><img src="assets/screenshot_gui.png" width="70%"></a>
 
 To serve using the web UI, you need three main components: web servers that interface with users, model workers that host one or more models, and a controller to coordinate the webserver and model workers. You can learn more about the architecture [here](docs/server_arch.md).
 
@@ -165,13 +135,13 @@ This controller manages the distributed workers.
 
 #### Launch the model worker(s)
 ```bash
-python3 -m fastchat.serve.model_worker --model-path lmsys/vicuna-7b-v1.3
+python3 -m fastchat.serve.model_worker --model-path Elite-AI-August/model_name
 ```
 Wait until the process finishes loading the model and you see "Uvicorn running on ...". The model worker will register itself to the controller .
 
 To ensure that your model worker is connected to your controller properly, send a test message using the following command:
 ```bash
-python3 -m fastchat.serve.test_message --model-name vicuna-7b-v1.3
+python3 -m fastchat.serve.test_message --model-name model_name
 ```
 You will see a short output.
 
@@ -189,9 +159,9 @@ If the models do not show up, try to reboot the gradio web server.
 - You can register multiple model workers to a single controller, which can be used for serving a single model with higher throughput or serving multiple models at the same time. When doing so, please allocate different GPUs and ports for different model workers.
 ```
 # worker 0
-CUDA_VISIBLE_DEVICES=0 python3 -m fastchat.serve.model_worker --model-path lmsys/vicuna-7b-v1.3 --controller http://localhost:21001 --port 31000 --worker http://localhost:31000
+CUDA_VISIBLE_DEVICES=0 python3 -m fastchat.serve.model_worker --model-path Elite-AI-August/model_name --controller http://localhost:21001 --port 31000 --worker http://localhost:31000
 # worker 1
-CUDA_VISIBLE_DEVICES=1 python3 -m fastchat.serve.model_worker --model-path lmsys/fastchat-t5-3b-v1.0 --controller http://localhost:21001 --port 31001 --worker http://localhost:31001
+CUDA_VISIBLE_DEVICES=1 python3 -m fastchat.serve.model_worker --model-path Elite-AI-August/fastchat-t5-3b-v1.0 --controller http://localhost:21001 --port 31001 --worker http://localhost:31001
 ```
 - You can also launch a multi-tab gradio server, which includes the Chatbot Arena tabs.
 ```bash
@@ -215,7 +185,7 @@ We use MT-bench, a set of challenging multi-turn open-ended questions to evaluat
 To automate the evaluation process, we prompt strong LLMs like GPT-4 to act as judges and assess the quality of the models' responses.
 See instructions for running MT-bench at [fastchat/llm_judge](fastchat/llm_judge).
 
-MT-bench is the new recommended way to benchmark your models. If you are still looking for the old 80 questions used in the vicuna blog post, please go to [vicuna-blog-eval](https://github.com/lm-sys/vicuna-blog-eval).
+MT-bench is the new recommended way to benchmark your models. If you are still looking for the old 80 questions used in the vicuna blog post, please go to vicuna-blog-eval
 
 ## Fine-tuning
 ### Data
